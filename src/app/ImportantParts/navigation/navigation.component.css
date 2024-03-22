@@ -1,0 +1,179 @@
+.nav_top {
+    padding-left: 12px;
+    padding-right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 3.5vh;
+}
+
+.navigation {
+    z-index: 10000000000000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0px;
+    width: 100%;
+    height: 80px;
+    background-color: #24262B;
+}
+
+.Made-by {
+    margin-left: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    font-size: 19px;
+    font-family: "Roboto", sans-serif;
+}
+
+.top_button-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    display: flex;
+    gap: 15px;
+}
+
+.top_button-list i {
+    width: auto;
+    height: auto;
+}
+
+.nav-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Roboto", sans-serif;
+    width: 280px;
+    height: 100%;
+    font-size: 35px;
+    color: white;
+}
+
+.nav-title p, .nav-title span {
+    cursor: pointer;
+}
+
+.nav-search {
+
+    margin-right: 20px;
+    display: flex;
+    border: 1px solid black;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 50%;
+    width: auto;
+    width: 350px;
+}
+
+.nav-search input {
+    width: 90%;
+    outline: none;
+    padding-left: 6px;
+    height: 100%;
+    border: none;
+}
+
+.nav-search button {
+    cursor: pointer;
+    width: 10%;
+    background-color: rgb(219, 187, 8);
+    color: white;
+    border: none;
+    transition: 0.3s all ease-in-out;
+}
+
+.nav-search button:hover {
+    background-color: rgb(235, 202, 11);
+}
+
+.nav-buttons {
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    font-size: 19px;
+    color: white;
+    height: 100%;
+    width: auto;
+}
+
+.nav-buttons a {
+    
+    font-family: "Roboto", sans-serif;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s all ease;
+}
+
+.nav-buttons a:hover {
+    color: rgb(219, 187, 8);
+    font-size: 21px;
+}
+
+.nav-buttons-logined {
+    margin-right: 10px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    font-size: 19px;
+    color: white;
+    height: 100%;
+    width: auto;
+}
+
+.nav-buttons-logined a {
+    font-family: "Roboto", sans-serif;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s all ease;
+}
+
+.nav-buttons-logined a:hover {
+    color: rgb(219, 187, 8);
+}
+
+.Profile-info {
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    width: auto;
+    height: 55%;
+    background-color: white;
+}
+
+.name {
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Roboto", sans-serif;
+}
+
+.Profile-info p {
+    color: black;
+}
+
+.sign-out {
+    cursor: pointer;
+    width: 40px;
+    height: 100%;
+    background-color: rgb(235, 202, 11);
+    border: none;
+    color: white;
+    font-size: 20px;
+}
+
+.active {
+    color: rgb(235, 202, 11) !important;
+}
