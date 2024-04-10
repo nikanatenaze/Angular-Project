@@ -1,15 +1,16 @@
 <nav class="navigation">
-    <div class="nav-title"><p><i class="fa-solid fa-cart-shopping"></i> SHOPER</p> <span style="color: gold;">.GE</span></div>
+    <div class="nav-title"><img src="../../../assets/logo.png" alt=""></div>
+
     <div class="nav-buttons">
         <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>
-        <a>Products</a>
-        <a>Services</a>
-        <a>About</a>
-        <a>Login in</a>
-        <a>Sign up</a>
+        <a>Hotels</a>
+        <a>Rooms</a>
+        <a>Bocked Rooms</a>
+        <a routerLink="/login" routerLinkActive="active">Sign In</a>
+        <a routerLink="/register" routerLinkActive="active">Register</a>
     </div>
     <div class="nav-buttons-logined">
-        <a>Home</a>
+        <a>Homea</a>
         <a>Products</a>
         <a>Services</a>
         <a>About</a>
@@ -20,9 +21,10 @@
             <button class="sign-out"><i class="fa-solid fa-right-from-bracket"></i></button>
         </div>
     </div>
-    <div class="nav-search">
-        <input  type="search" placeholder="Search..">
-        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+    <div class="burgerbar">
+        <i (click)="toggleSlide()" class="fa-solid fa-bars"></i>
     </div>
-    
 </nav>
+<div class="slide-nav" [style.transform]="toggleSlideBar">
+        
+</div>

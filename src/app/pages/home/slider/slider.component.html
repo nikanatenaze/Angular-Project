@@ -1,0 +1,17 @@
+<section class="slider">
+    <button (click)="previmage()" class="next"><i class="fa-solid fa-chevron-left"></i></button>
+    <div class="image-div">
+        <img src="../../../../assets/sliderimages/home{{selectedimage}}.jpg" alt="">
+    </div>
+    <button (click)="nextimage()" class="prev"><i class="fa-solid fa-chevron-right"></i></button>
+    <div class="designtext">
+        <p class="ht">H</p>
+        <p class="Hola">Hello.Salut.Hola</p>
+        <p class="h-text">  
+            The Sochi Hotel is a luxurious beachfront resort located in the heart of Sochi, Russia. The hotel offers stunning views of the Black Sea and is surrounded by lush gardens, providing a serene and relaxing atmosphere for guests. With its elegant rooms and suites, gourmet restaurants, and world-class spa, the Sochi Hotel is the perfect destination for those seeking a truly unforgettable getaway.
+        </p>
+    </div>
+    <div class="counter">
+        <p>{{selectedimage}} of 4</p>
+    </div>
+</section>

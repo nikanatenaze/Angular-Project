@@ -1,0 +1,31 @@
+<div class="container">
+    <form class="login" action="">
+        <img class="icon" src="../../../../assets/logo.png" alt="">
+        <div class="input-list">
+            <div class="inputa">
+                <p class="input-text">User Email:</p>
+                <input type="text" class="input" placeholder="Email" [(ngModel)]="email" name="Email" [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="inputa">
+                <p class="input-text">Password:</p>
+                <input type="text" class="input" placeholder="Password" [(ngModel)]="passowrd" name="Password" [ngModelOptions]="{standalone: true}">
+            </div>
+        </div>
+        <a href=""class="fp">Forgot Passowrd?</a>
+        <div class="buttons">
+            <button class="button-class signinbtn" (click)="login()">Sign In</button>
+              <div class="separator">
+                <hr class="line">
+                <span>Or</span>
+                <hr class="line">
+              </div>
+            <button class="button-class signupbtn">Create Account</button>
+        </div>
+        <div class="icons">
+            <i class="fa-brands fa-google"></i>
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-tiktok"></i>
+            <i class="fa-brands fa-github"></i>
+        </div>
+    </form>
+</div>

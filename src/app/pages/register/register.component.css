@@ -1,0 +1,148 @@
+.login {
+    display: flex;
+    align-items: center; 
+    width: 430px;
+    height: 550px;
+    background-color: rgba(0, 0, 0, 0.361);
+    backdrop-filter: blur(30px);
+    border-radius: 35px;
+    border: 2px solid white;
+    flex-direction: column
+}
+
+.icon {
+    margin-top: 30px;
+    width: 200px;
+}
+
+.input-list {
+    margin-top: 30px;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+}
+
+.inputa {
+    width: 70%;
+}
+
+.input-text {
+    font-family: "Roboto", sans-serif;
+    color: white;
+    font-size: 14px;
+}
+
+.fp {
+    font-family: "Roboto", sans-serif;
+    margin-top: 8px;
+    color: rgb(185, 2, 185);
+    width: 70%;
+    font-size: 15px;
+}
+
+.separator {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    color: #8B8E98;
+  }
+
+  .separator span {
+    color: white;
+  }
+  
+  .separator .line {
+    display: block;
+    width: 25%;
+    height: 1px;
+    border: 0;
+    background-color: #e8e8e8;
+  }
+  
+
+.input {
+    outline: none;
+    width: 100%;
+    height: 45px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid black;
+    border-radius: 6px;
+}
+
+.buttons {
+    gap: 3px;
+    margin-top: 10px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.button-class {
+    width: 70%;
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.signinbtn {
+    background-color: #115DFC;
+    color: white;
+    transition: 0.3s all ease;
+    border: none;
+}
+
+.signupbtn {
+    background-color: rgb(46, 186, 11);
+    color: white;
+    transition: 0.3s all ease;
+}
+
+.signupbtn:hover {
+    background-color: rgb(56, 214, 17);
+}
+
+.signinbtn:hover {
+    background-color: #1f64fa;
+}
+
+.icons {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    color: rgb(209, 209, 209);
+    font-size: 30px;
+}
+
+.icons i {
+    cursor: pointer;
+    transition: 0.3s all ease;
+}
+
+.icons i:hover {
+    color: white;
+    transform: rotate(10deg);
+}
+
+.container {
+    margin-top: -80px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("https://images.pexels.com/photos/726478/pexels-photo-726478.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
