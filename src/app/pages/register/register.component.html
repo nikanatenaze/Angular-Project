@@ -1,30 +1,39 @@
-<div class="container">
-    <div class="container">
-        <form class="login" action="">
-            <img class="icon" src="../../../../assets/logo.png" alt="">
+<section class="container">
+    <div class="form-div">
+        <form class="login" action="" [formGroup]="regform" (ngSubmit)="register()">
+            <p class="login-title">Register</p>
             <div class="input-list">
                 <div class="inputa">
-                    <p class="input-text">User Name:</p>
-                    <input type="text" class="input" placeholder="Email" [(ngModel)]="name" [ngModelOptions]="{standalone: true}">
+                    <p class="input-text">User name:</p>
+                    <input formControlName="firstName" type="text" class="input" placeholder="User name" name="Email" [(ngModel)]="UserName">
+                    <div class="valtext" *ngIf="regform.get('firstName')?.invalid && regform.get('firstName')?.touched">
+                        <small class="valtext-t">Enter Name Please!</small>
+                    </div>
                 </div>
                 <div class="inputa">
                     <p class="input-text">Email:</p>
-                    <input type="text" class="input" placeholder="Password" [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
+                    <input formControlName="email" type="text" class="input" placeholder="Email" name="Email" [(ngModel)]="email">
+                    <div class="valtext" *ngIf="regform.get('email')?.invalid && regform.get('email')?.touched">
+                        <small class="valtext-t">Enter Email Please!</small>
+                    </div>
                 </div>
                 <div class="inputa">
                     <p class="input-text">Password:</p>
-                    <input type="text" class="input" placeholder="Password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}"> 
+                    <input formControlName="password" type="text" class="input" placeholder="Password" name="Password" [(ngModel)]="password">
+                    <div class="valtext" *ngIf="regform.get('password')?.invalid && regform.get('password')?.touched">
+                        <small class="valtext-t">Enter Password Please!</small>
+                    </div>
                 </div>
             </div>
-            <a href=""class="fp">Forgot Passowrd?</a>
+            <a class="fp">Forgot Passowrd?</a>
             <div class="buttons">
-                <button class="button-class signinbtn" (click)="register()">Register</button>
+                <button class="button-class signupbtn" (click)="OwnAuth()">Register</button>
                   <div class="separator">
                     <hr class="line">
                     <span>Or</span>
                     <hr class="line">
                   </div>
-                <button class="button-class signupbtn">Sign in</button>
+                <button class="button-class signinbtn" routerLink="/login">Already have an account?</button>
             </div>
             <div class="icons">
                 <i class="fa-brands fa-google"></i>
@@ -33,5 +42,6 @@
                 <i class="fa-brands fa-github"></i>
             </div>
         </form>
-    </div>    
-</div>
+    </div>
+    <app-register-slider style="width: 50%;"></app-register-slider>
+</section>

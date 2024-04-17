@@ -8,17 +8,13 @@ export class AuthService {
 
   constructor(public api: HttpClient) { }
 
-  signin (Email:any, Password:any) {
+  signin (data:any) {
     const Url = "https://api.everrest.educata.dev/auth/sign_in"
-    return this.api.post(Url, {Email, Password})
+    return this.api.post(Url, data)
   }
 
-  register(UserName:any ,Email:any, Password:any) {
+  register(data:any) {
     const Url = "https://api.everrest.educata.dev/auth/sign_up"
-    return this.api.post(Url, {
-      "email": Email, 
-      "password": Password, 
-      "name": UserName, 
-    })
+    return this.api.post(Url, data)
   }
 }

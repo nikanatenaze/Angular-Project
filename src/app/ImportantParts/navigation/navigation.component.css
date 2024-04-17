@@ -58,6 +58,7 @@
 }
 
 .nav-title img {
+    cursor: pointer;
     width: 180px;
 }
 
@@ -102,7 +103,7 @@
 .nav-buttons {
    
     margin-right: 10px;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     gap: 15px;
@@ -127,7 +128,7 @@
 
 .nav-buttons-logined {
     margin-right: 10px;
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: center;
     gap: 15px;
@@ -195,11 +196,28 @@
 }
 
 .slide-nav {
+    gap: 30px;
+    flex-direction: column;
     position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
     transform: translateY(-1500px);
     width: 100%;
     height: calc(100vh + 35px);
-    background-color: #4c638c71;
+    background-color: #000000af;
+    backdrop-filter: blur(10px);
+}
+
+.slid-button {
+    cursor: pointer;
+    color: white;
+    width: 200px;
+    height: 50px;
+    background-color: #4C638C;
+    border: 1px solid black;
+    border-radius: 5px;
 }
 
 @media screen and (max-width: 760px) {

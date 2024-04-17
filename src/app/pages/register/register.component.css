@@ -1,24 +1,27 @@
 .login {
     display: flex;
     align-items: center; 
-    width: 430px;
-    height: 550px;
-    background-color: rgba(0, 0, 0, 0.361);
-    backdrop-filter: blur(30px);
-    border-radius: 35px;
-    border: 2px solid white;
-    flex-direction: column
+    width: 480px;
+    height: auto;
+    background-color: white;
+    border-radius: 15px;
+    flex-direction: column;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.250);
+    
 }
 
 .icon {
-    margin-top: 30px;
+    background-color: black;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 15px;
     width: 200px;
 }
 
 .input-list {
-    margin-top: 30px;
+    margin-top: 15px;
     flex-direction: column;
-    gap: 10px;
+    gap: 0px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -38,7 +41,7 @@
 
 .fp {
     font-family: "Roboto", sans-serif;
-    margin-top: 8px;
+    margin-top: 3px;
     color: rgb(185, 2, 185);
     width: 70%;
     font-size: 15px;
@@ -50,11 +53,11 @@
     align-items: center;
     justify-content: center;
     gap: 30px;
-    color: #8B8E98;
+    color: #707071;
   }
 
   .separator span {
-    color: white;
+    color: black;
   }
   
   .separator .line {
@@ -62,18 +65,18 @@
     width: 25%;
     height: 1px;
     border: 0;
-    background-color: #e8e8e8;
+    background-color: #aeaeae;
   }
   
 
 .input {
     outline: none;
     width: 100%;
-    height: 45px;
+    height: 50px;
     padding-left: 10px;
     padding-right: 10px;
-    border: 1px solid black;
-    border-radius: 6px;
+    border: 1px solid #aeaeae;
+    border-radius: 7px;
 }
 
 .buttons {
@@ -96,6 +99,7 @@
 }
 
 .signinbtn {
+    margin-top: 5px;
     background-color: #115DFC;
     color: white;
     transition: 0.3s all ease;
@@ -117,10 +121,11 @@
 }
 
 .icons {
-    margin-top: 20px;
+    margin-bottom: 30px;
+    margin-top: 30px;
     display: flex;
     gap: 10px;
-    color: rgb(209, 209, 209);
+    color: black;
     font-size: 30px;
 }
 
@@ -130,19 +135,65 @@
 }
 
 .icons i:hover {
-    color: white;
-    transform: rotate(10deg);
+    color: rgb(167, 167, 167);
+    transform: rotate(5deg);
 }
 
 .container {
     margin-top: -80px;
     width: 100%;
+    height: 96.5vh;
+    display: flex;
+    background-color: #F4F4F4;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.form-div {
+    width: 50%;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url("https://images.pexels.com/photos/726478/pexels-photo-726478.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+}
+
+.valtext {
+    padding-top: 1px;
+    width: 100%;
+    height: 22px;
+    background-color: white;
+    margin-top: -3px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 1px solid black;
+    background-color: rgb(228, 17, 17);
+}
+
+.valtext-t {
+    font-size: 12px;
+    font-family: "Roboto", sans-serif;
+    color: white;
+    margin-left: 5px;
+}
+
+.login-title {
+    font-family: "Roboto", sans-serif;
+    font-size: 45px;
+    margin-top: 40px;
+}
+
+@media screen and (max-width: 1200px) {
+    app-register-slider {
+        display: none;
+    }
+
+    .form-div {
+        width: 100%;
+    }
+
+    .login {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
 }

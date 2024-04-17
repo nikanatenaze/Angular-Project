@@ -1,0 +1,18 @@
+<div class="content">
+    <p class="title">Our Hotels:</p>
+    <div class="cards">
+        <div class="card" *ngFor="let item of Hotels">
+            <div class="h-card">
+                <img class="h-card-image"
+                src="{{item.featuredImage}}" alt="">
+                <div class="h-card-content">
+                    <p class="title-con">Hotel: {{item.name}}</p>
+                    <p class="title-con">Address: {{item.address}}</p>
+                    <div class="content-buttons">
+                        <button class="button">See Rooms</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

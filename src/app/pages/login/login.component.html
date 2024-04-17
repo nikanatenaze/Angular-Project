@@ -1,31 +1,40 @@
-<div class="container">
-    <form class="login" action="">
-        <img class="icon" src="../../../../assets/logo.png" alt="">
-        <div class="input-list">
-            <div class="inputa">
-                <p class="input-text">User Email:</p>
-                <input type="text" class="input" placeholder="Email" [(ngModel)]="email" name="Email" [ngModelOptions]="{standalone: true}">
+<section class="container">
+    <div class="form-div">
+        <form class="login" action="" [formGroup]="loginform" (ngSubmit)="login()">
+            <p class="login-title">Login</p>
+            <div class="input-list">
+                <div class="inputa">
+                    <p class="input-text">User Email:</p>
+                    <input formControlName="email" type="text" class="input" placeholder="Email" name="Email" [(ngModel)]="emaila">
+                    <div class="valtext" *ngIf="loginform.get('email')?.invalid && loginform.get('email')?.touched">
+                        <small class="valtext-t">Enter Email Please!</small>
+                    </div>
+                </div>
+                <div class="inputa">
+                    <p class="input-text">Password:</p>
+                    <input formControlName="password" type="text" class="input" placeholder="Password" name="Password" [(ngModel)]="passworda">
+                    <div class="valtext" *ngIf="loginform.get('password')?.invalid && loginform.get('password')?.touched">
+                        <small class="valtext-t">Enter Password Please!</small>
+                    </div>
+                </div>
             </div>
-            <div class="inputa">
-                <p class="input-text">Password:</p>
-                <input type="text" class="input" placeholder="Password" [(ngModel)]="passowrd" name="Password" [ngModelOptions]="{standalone: true}">
+            <a class="fp">Forgot Passowrd?</a>
+            <div class="buttons">
+                <button class="button-class signinbtn" (click)="OwnAuthLogin()">Sign In</button>
+                  <div class="separator">
+                    <hr class="line">
+                    <span>Or</span>
+                    <hr class="line">
+                  </div>
+                <button class="button-class signupbtn" routerLink="/register">Create Account</button>
             </div>
-        </div>
-        <a href=""class="fp">Forgot Passowrd?</a>
-        <div class="buttons">
-            <button class="button-class signinbtn" (click)="login()">Sign In</button>
-              <div class="separator">
-                <hr class="line">
-                <span>Or</span>
-                <hr class="line">
-              </div>
-            <button class="button-class signupbtn">Create Account</button>
-        </div>
-        <div class="icons">
-            <i class="fa-brands fa-google"></i>
-            <i class="fa-brands fa-facebook-f"></i>
-            <i class="fa-brands fa-tiktok"></i>
-            <i class="fa-brands fa-github"></i>
-        </div>
-    </form>
-</div>
+            <div class="icons">
+                <i class="fa-brands fa-google"></i>
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-tiktok"></i>
+                <i class="fa-brands fa-github"></i>
+            </div>
+        </form>
+    </div>
+    <app-login-slider style="width: 50%;"></app-login-slider>
+</section>

@@ -1,0 +1,9 @@
+<section class="content">
+    <div class="image" style="background-image: url({{imageArray[selectedimage]}});">
+        <div class="image-bar">
+            <button class="prev" (click)="prevImg()"><i class="fa-solid fa-angle-left"></i></button>
+            <div *ngFor="let item of imageArray let i = index" class="circle" (click)="selectImage(i)"></div>
+            <button class="next" (click)="nextImg()"><i class="fa-solid fa-angle-right"></i></button>
+        </div>
+    </div>
+</section>
