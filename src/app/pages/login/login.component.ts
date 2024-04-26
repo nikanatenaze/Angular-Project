@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { FormControl, FormGroup, FormsModule, Validators } from '@angular/forms';
 import { OwnAuthService } from '../../services/own-auth.service';
+import { response } from 'express';
+import { error } from 'console';
 
 @Component({
   selector: 'app-login',
@@ -25,6 +27,14 @@ export class LoginComponent implements OnInit{
 
   login() {
     this.Auth.signin(this.loginform)
+    .subscribe(
+      (response) => {
+        console.log("წარმატებით შესვლა:", response);
+      },
+      (error) => {
+        console.error("რაღაც შეცდომაა:", error);
+      }
+    )
     console.log(this.loginform);   
   }
 

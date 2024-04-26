@@ -1,1 +1,72 @@
-<p>rooms works!</p>
+<app-video></app-video>
+<div class="search-container">
+    <div class="search-div">
+        <div class="filter-div">
+            <div class="room-type">
+                <p>Room Type:</p>
+                <div class="buttons-div">
+                    <button class="room-type-button" (click)="getTypedRooms(1)">Single</button>
+                    <button class="room-type-button" (click)="getTypedRooms(2)">Double</button>
+                    <button class="room-type-button" (click)="getTypedRooms(3)">Deluxe</button>
+                </div>
+            </div>
+            <div class="min-max-price">
+                <p>Price Min/Max:</p>
+                <div class="min-max-inputs">
+                    <input type="text" class="minp" placeholder="Min p." [(ngModel)]="minprice">
+                    <input type="text" class="maxp" placeholder="Max p." [(ngModel)]="maxprice">
+                </div>
+            </div>
+            <div class="min-max-price">
+                <p>Check In:</p>
+                <input type="date" class="check-in" [(ngModel)]="checkin">
+            </div>
+            <div class="min-max-price">
+                <p>Check Out:</p>
+                <input type="date" class="check-in" [(ngModel)]="checkout">
+            </div>
+            <div class="Gusts">
+                <p>Room type:</p>
+                <select class="Guestselect" id="selector">
+                    <option value="1">Single</option>
+                    <option value="2">Double</option>
+                    <option value="3">Deluxe</option>
+                </select>
+            </div>
+            <div class="Gusts">
+                <p>Guest:</p>
+                <select class="Guestselect" id="selector2">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select>
+            </div>
+            <div class="apply">
+                <p>Filter:</p>
+                <div class="fileter-buttonsa">
+                    <button class="resetbtn" (click)="getRooms()"><i class="fa-solid fa-rotate-right"></i></button>
+                    <button class="search-button" (click)="Filter()">Apply filter</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="cards">
+    <div class="rooms-card" *ngFor="let item of Roomsdata">
+        <img class="rooms-card-image"
+        src="{{item.images[0].source}}" alt="">
+        <div class="card-info">
+            <div class="card-text">
+                <p>{{item.name}}</p>
+            </div>
+            <div class="card-price">
+                <p>{{item.pricePerNight}}$</p>
+                <p>Per night</p>
+            </div>
+        </div>
+        <button class="details" routerLink="/details/{{item.id}}">See Details</button>
+    </div>
+</div>

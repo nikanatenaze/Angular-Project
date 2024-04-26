@@ -9,18 +9,51 @@ import e from 'express';
 })
 export class NavigationComponent implements AfterViewInit{
   ngAfterViewInit(): void {
+    // this.getNavigationData()
     this.Check()
-  }
-
-  Check() {
     
   }
+
+  public loginedBoolean!:any
+  public realBoolean!:boolean
+  public secondBoolean!:boolean
+
+  Check() {
+    console.log(localStorage.getItem("Logined"))
+    if(localStorage.getItem("Logined") == null) {
+      this.loginedBoolean = "false"
+    } else {
+      this.loginedBoolean = localStorage.getItem("Logined")
+    }
+    
+    if(this.loginedBoolean == "false") {
+      this.realBoolean = false
+    } else {
+      this.realBoolean = true
+    } 
+
+    if (this.realBoolean === false) {
+      this.secondBoolean = true
+    } else {
+      this.secondBoolean = false
+    }
+
+    console.log("Real Boolean", this.realBoolean);
+    console.log("Second Boolean", this.secondBoolean);
+    
+  }
+
+  public navUserName:any
+
+  // getNavigationData() {
+  //   this.navUserName = localStorage.getItem("UsName")
+  // }
   
   public toggleSlideBar:any = "translateY(-1500px)"
-  toggleSlide() {0
+  toggleSlide() {
     if(this.toggleSlideBar === "translateY(-1500px)"){
       this.toggleSlideBar = "translateY(-40px)"
-    } else{
+    } else {
       this.toggleSlideBar = "translateY(-1500px)"
     }
     console.log(this.toggleSlideBar);
@@ -31,6 +64,8 @@ export class NavigationComponent implements AfterViewInit{
 
  
   signout() {
+    this.loginedBoolean = false
     localStorage.setItem("Logined", "false")
+    location.reload()
   }
 }

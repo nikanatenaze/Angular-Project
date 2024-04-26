@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { OwnAuthService } from '../../services/own-auth.service';
+import { setInterval } from 'timers/promises';
+import { log } from 'console';
+import { response } from 'express';
 
 @Component({
   selector: 'app-register',
@@ -11,36 +14,34 @@ import { OwnAuthService } from '../../services/own-auth.service';
 export class RegisterComponent implements OnInit{
   constructor (public Auth: AuthService, public OwnAutha: OwnAuthService) {}
   ngOnInit(): void {
-    this.registerObject()
+    this.GetFormGroup()
   }
 
-  public UserName:any
-  public email:any
-  public password:any
+  // OwnAuth() {
+  //   this.OwnAutha.Register(this.UserName, this.email, this.password)
+  //   console.log(this.UserName);
+  //   console.log(this.reel);
+  // }
 
-  OwnAuth() {
-    this.OwnAutha.Register(this.UserName, this.email, this.password)
-  }
+  public RegisForm!: FormGroup
 
-  public regform!: FormGroup
-
-  registerObject() {
-    this.regform = new FormGroup({
-      password: new FormControl("", Validators.required),
-      email: new FormControl("", Validators.required),
-      firstName: new FormControl("", Validators.required),
-    })
-  }
-
-  register() {
-    console.log(this.regform);
-    this.Auth.register(this.regform).subscribe((res:any) => {
-      if(res.result) {
-        alert("succses")
-      } else {
-        alert("error")
+  Register() {
+    this.Auth.register(this.RegisForm)
+    .subscribe(
+      (response) => {
+        console.log('წარმატებული რეგისტრაცია:', response);
+      },
+      (error) => {
+        console.error('რაღაც შეცდომაა:', error);
       }
+    )
+  }
+
+  GetFormGroup() {
+    this.RegisForm = new FormGroup({
+      password: new FormControl("", Validators.required),
+      email: new FormControl("", Validators.required)
     })
   }
- 
+
 }

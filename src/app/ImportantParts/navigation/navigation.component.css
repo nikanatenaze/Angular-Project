@@ -103,7 +103,7 @@
 .nav-buttons {
    
     margin-right: 10px;
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: center;
     gap: 15px;

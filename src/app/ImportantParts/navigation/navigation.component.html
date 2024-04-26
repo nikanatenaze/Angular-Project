@@ -1,21 +1,21 @@
 <nav class="navigation">
     <div class="nav-title"><img src="../../../assets/logo.png" alt="" routerLink="/"></div>
 
-    <div class="nav-buttons">
+    <div class="nav-buttons" *ngIf="secondBoolean">
         <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>
         <a routerLink="/rooms" routerLinkActive="active">Rooms</a>
         <a routerLink="/bookeds" routerLinkActive="active">Booked's</a>
         <a routerLink="/login" routerLinkActive="active">Login</a>
         <a routerLink="/register" routerLinkActive="active">Register</a>
     </div>
-    <div class="nav-buttons-logined">
+    <div class="nav-buttons-logined" *ngIf="realBoolean">
         <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>
         <a routerLink="/rooms" routerLinkActive="active">Rooms</a>
         <a routerLink="/bookeds" routerLinkActive="active">Booked's</a>
         <a routerLink="/profile" routerLinkActive="active">Profile</a>
         <div class="Profile-info">
             <div class="name">
-                <p>Nika Natenadze</p>
+                <p>{{navUserName}}</p>
             </div>
             <button class="sign-out" (click)="signout()"><i class="fa-solid fa-right-from-bracket"></i></button>
         </div>

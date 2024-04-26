@@ -17,6 +17,8 @@ import { LoginSliderComponent } from './pages/login/login-slider/login-slider.co
 import { RegisterSliderComponent } from './pages/register/register-slider/register-slider.component';
 import { VideoComponent } from './pages/home/video/video.component';
 import { RoomsComponent } from './pages/rooms/rooms.component';
+import { DetailsComponent } from './pages/rooms/details/details.component';
+import { BookedsComponent } from './pages/bookeds/bookeds.component';
 
 @NgModule({
   declarations: [
@@ -34,13 +36,15 @@ import { RoomsComponent } from './pages/rooms/rooms.component';
     RegisterSliderComponent,
     VideoComponent,
     RoomsComponent,
+    DetailsComponent,
+    BookedsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [
     provideClientHydration()
