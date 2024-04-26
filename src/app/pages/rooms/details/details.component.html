@@ -1,3 +1,44 @@
 <section class="content">
-
+    <div class="slider">
+        <div class="image" style="background-image: url({{imagesArray[selectedImage].source}});">
+            <div class="controler">
+                <i class="fa-solid fa-chevron-left left-prev" (click)="previmage()"></i>
+                <div class="dotsdiv">
+                    <div class="dotCounter" (click)="selectImageBydot(i)" *ngFor="let item of imagesArray, let i = index"></div>
+                </div>
+                <i class="fa-solid fa-chevron-right right-next" (click)="nextimage()"></i>
+            </div>
+        </div>
+    </div>
+    <div class="booking-form" [formGroup]="bookingform">
+        <p class="title">Reserve Room</p>
+        <div class="price-name">
+            <p>{{hotelData.name}} <span class="price-pn">₾{{hotelData.pricePerNight}}</span> - Per night</p>
+        </div>
+        <div class="inputs">
+            <div class="input-div">
+                <p>Check-in</p>
+                <input type="date" class="input-real" formControlName="checkIn">
+                <p class="errra-me-ro-vici" *ngIf="bookingform.get('checkIn')?.invalid && bookingform.get('checkIn')?.touched">*Enter Please Check-in date</p>
+            </div>
+            <div class="input-div">
+                <p>Check-out</p>
+                <input type="date" class="input-real" formControlName="checkOut">
+                <p class="errra-me-ro-vici" *ngIf="bookingform.get('checkOut')?.invalid && bookingform.get('checkOut')?.touched">*Enter Please Check-out date</p>
+            </div>
+            <div class="input-div">
+                <p>Customer Name</p>
+                <input type="text" class="input-real" formControlName="userName" placeholder="Please eneter your name">
+                <p class="errra-me-ro-vici" *ngIf="bookingform.get('userName')?.invalid && bookingform.get('userName')?.touched">*Enter Costumer Name Please</p>
+            </div>
+            <div class="input-div">
+                <p>Phone Number</p>
+                <input type="text" class="input-real" formControlName="userPhone" placeholder="Please enter your phone number">
+                <p class="errra-me-ro-vici" *ngIf="bookingform.get('userPhone')?.invalid && bookingform.get('userPhone')?.touched">*Enter Phone Number please</p>
+            </div>
+        </div>
+        <button class="book-button">Book</button>
+    </div>
+    <app-another-details></app-another-details>
 </section>
+

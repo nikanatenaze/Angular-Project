@@ -19,6 +19,7 @@ import { VideoComponent } from './pages/home/video/video.component';
 import { RoomsComponent } from './pages/rooms/rooms.component';
 import { DetailsComponent } from './pages/rooms/details/details.component';
 import { BookedsComponent } from './pages/bookeds/bookeds.component';
+import { AnotherDetailsComponent } from './pages/rooms/details/another-details/another-details.component';
 
 @NgModule({
   declarations: [
@@ -35,9 +36,10 @@ import { BookedsComponent } from './pages/bookeds/bookeds.component';
     LoginSliderComponent,
     RegisterSliderComponent,
     VideoComponent,
-    RoomsComponent,
+     RoomsComponent,
     DetailsComponent,
     BookedsComponent,
+    AnotherDetailsComponent,
   ],
   imports: [
     BrowserModule,
