@@ -16,8 +16,6 @@ export class HotelsComponent implements OnInit {
   getdata() {
     this.api.getHotels().subscribe(info => {
       this.Hotels = info
-      console.log(info);
-      
     })
   }
 }

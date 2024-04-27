@@ -41,4 +41,8 @@ export class AuthService {
     
     return this.api.post(Url, body, { headers })
   }
+
+  getUsers() {
+    return this.api.get("https://fakestoreapi.com/users")
+  }
 }

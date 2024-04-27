@@ -33,7 +33,7 @@ ul{
 	position: absolute;
 	left:0;
 	bottom: -10px;
-	background-color: #e91e63;
+	background-image: linear-gradient(to right, #43cfec, #38caec, #2dc6ec, #21c1eb, #12bceb);
 	height: 2px;
 	box-sizing: border-box;
 	width: 50px;

@@ -51,7 +51,7 @@
     align-items: center;
     justify-content: center;
     font-family: "Roboto", sans-serif;
-    width: 280px;
+    width: 240px;
     height: 100%;
     font-size: 35px;
     color: white;
@@ -146,20 +146,22 @@
 }
 
 .nav-buttons-logined a:hover {
-    color: #76a8cb;
+    color: #2888e1;
 }
 
 .Profile-info {
     border-radius: 8px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     overflow: hidden;
-    width: auto;
+    width: auto 200px;
     height: 55%;
     background-color: white;
 }
 
 .name {
+    width: calc(100%);
     padding-left: 10px;
     padding-right: 10px;
     height: 100%;
@@ -175,7 +177,7 @@
 
 .sign-out {
     cursor: pointer;
-    width: 40px;
+    width: 60px;
     height: 100%;
     background-color: #4C638C;
     border: none;
@@ -184,7 +186,8 @@
 }
 
 .active {
-    color: #76a8cb !important;
+    color: #2888e1 !important;
+    font-weight: bold;
 }
 
 .burgerbar {

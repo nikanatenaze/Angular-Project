@@ -37,7 +37,7 @@
                 <p class="errra-me-ro-vici" *ngIf="bookingform.get('userPhone')?.invalid && bookingform.get('userPhone')?.touched">*Enter Phone Number please</p>
             </div>
         </div>
-        <button class="book-button">Book</button>
+        <button class="book-button" (click)="BookRoom()">Book</button>
     </div>
     <app-another-details></app-another-details>
 </section>

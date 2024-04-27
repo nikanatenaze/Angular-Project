@@ -10,6 +10,7 @@ import { BookedsComponent } from './pages/bookeds/bookeds.component';
 
 const routes: Routes = [
   {path: "", component: HomeComponent},
+  {path: "home", component: HomeComponent}, 
   {path: "login", component: LoginComponent},
   {path: "register", component: RegisterComponent},
   {path: "rooms", component: RoomsComponent},

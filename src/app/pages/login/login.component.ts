@@ -4,6 +4,8 @@ import { FormControl, FormGroup, FormsModule, Validators } from '@angular/forms'
 import { OwnAuthService } from '../../services/own-auth.service';
 import { response } from 'express';
 import { error } from 'console';
+import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,12 +13,24 @@ import { error } from 'console';
   styleUrl: './login.component.css'
 })
 export class LoginComponent implements OnInit{
-  constructor(private Auth: AuthService, public OwnAuth: OwnAuthService) {}
+  constructor(private Auth: AuthService, public OwnAuth: OwnAuthService, public router: Router) {}
   ngOnInit(): void {
     this.FormObject();
+    this.loginNotification()
+    this.GetUserList()
   }
 
   public loginform!: FormGroup
+
+  loginNotification() {
+    console.log("|=====================================");
+    console.log("|"); 
+    console.log("|   Use FakeApi to login because "); 
+    console.log("|   this project is in beta test");
+    console.log("|   https://fakestoreapi.com/users");
+    console.log("|");
+    console.log("|=====================================");    
+  }
 
   FormObject() {
     this.loginform = new FormGroup({
@@ -34,8 +48,7 @@ export class LoginComponent implements OnInit{
       (error) => {
         console.error("რაღაც შეცდომაა:", error);
       }
-    )
-    console.log(this.loginform);   
+    )  
   }
 
   // Own Auth
@@ -44,5 +57,42 @@ export class LoginComponent implements OnInit{
 
   OwnAuthLogin() {
     this.OwnAuth.Login(this.emaila, this.passworda)
+  }
+
+  // fake api login
+
+  public UserList:any
+
+  GetUserList() {
+    this.Auth.getUsers().subscribe((data:any) => {
+      this.UserList = data
+    })
+  }
+
+  LoginFakeApi() {
+    let userKeys = this.UserList.find((item:any) => {
+      return item.email == this.emaila && item.password == this.passworda
+    })
+
+    if(userKeys) {
+      localStorage.setItem("user", JSON.stringify(userKeys))
+      localStorage.setItem("logined", "true")
+      Swal.fire({
+        title: "Logined successfully!",
+        text: `Welcome ${userKeys.username}, How are you?`,
+        icon: "success"
+      });
+    } else {
+      localStorage.setItem("logined", "false")
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Wrong password or email, please enter correctly!",
+        footer: '<a href="https://fakestoreapi.com/users" target="_blank">Forgot Password?</a>'
+      });
+    }
+
+    this.router.navigate(["/"])
+    
   }
 }

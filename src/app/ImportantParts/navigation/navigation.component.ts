@@ -9,46 +9,49 @@ import e from 'express';
 })
 export class NavigationComponent implements AfterViewInit{
   ngAfterViewInit(): void {
-    // this.getNavigationData()
-    this.Check()
+    this.checkStatus()
+    this.getUserInformation()
+  }
+
+  public loginedBoolean:any
+  public secloginBoolean:any
+
+  checkStatus() {
+    console.log(localStorage.getItem("logined"));
+    
+    if(localStorage.getItem("logined") == "true") {
+      this.loginedBoolean = true
+    } else {
+      this.loginedBoolean = false
+    }
+
+    if(this.loginedBoolean) {
+      this.secloginBoolean = false
+    } else {
+      this.secloginBoolean = true
+    }
+    console.log(this.loginedBoolean);
     
   }
 
-  public loginedBoolean!:any
-  public realBoolean!:boolean
-  public secondBoolean!:boolean
-
-  Check() {
-    console.log(localStorage.getItem("Logined"))
-    if(localStorage.getItem("Logined") == null) {
-      this.loginedBoolean = "false"
-    } else {
-      this.loginedBoolean = localStorage.getItem("Logined")
-    }
-    
-    if(this.loginedBoolean == "false") {
-      this.realBoolean = false
-    } else {
-      this.realBoolean = true
-    } 
-
-    if (this.realBoolean === false) {
-      this.secondBoolean = true
-    } else {
-      this.secondBoolean = false
-    }
-
-    console.log("Real Boolean", this.realBoolean);
-    console.log("Second Boolean", this.secondBoolean);
-    
+  signout() {
+    this.loginedBoolean = false
+    this.secloginBoolean = true
+    localStorage.setItem("logined", "false")
+    location.reload()
   }
 
-  public navUserName:any
+  public userInformation:any
+  public userName:any
 
-  // getNavigationData() {
-  //   this.navUserName = localStorage.getItem("UsName")
-  // }
-  
+  getUserInformation() {
+    let localStoragedata:any = localStorage.getItem("user")
+    this.userInformation = JSON.parse(localStoragedata)
+    this.userName = this.userInformation.username
+  }
+
+  // burger bar
+
   public toggleSlideBar:any = "translateY(-1500px)"
   toggleSlide() {
     if(this.toggleSlideBar === "translateY(-1500px)"){
@@ -58,14 +61,5 @@ export class NavigationComponent implements AfterViewInit{
     }
     console.log(this.toggleSlideBar);
     
-  }
-
-  public ShownBoolean!:boolean
-
- 
-  signout() {
-    this.loginedBoolean = false
-    localStorage.setItem("Logined", "false")
-    location.reload()
   }
 }

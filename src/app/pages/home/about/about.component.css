@@ -1,0 +1,58 @@
+.content {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("https://images.pexels.com/photos/274060/pexels-photo-274060.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.blur {
+    padding-top: 55px;
+    padding-bottom: 55px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.300);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+    font-family: "Noto Sans", sans-serif;
+}
+
+.blur-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contenta {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.abut-us-text {
+    font-family: "Noto Sans", sans-serif;
+    width: 500px;
+    color: white;
+}
+
+.contenta-image {
+    width: 300px;
+    height: 300px;
+}

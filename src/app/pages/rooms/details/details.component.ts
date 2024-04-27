@@ -3,56 +3,55 @@ import { ActivatedRoute } from '@angular/router';
 import { HotelApiService } from '../../../services/hotel-api.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { BookingServiceService } from '../../../services/booking-service.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
   styleUrl: './details.component.css'
 })
-export class DetailsComponent implements OnInit{
+export class DetailsComponent implements OnInit {
   ngOnInit(): void {
     this.getRouterInfo()
     this.getById()
     this.getMyFormGroup()
   }
 
-  constructor(public routerInfo: ActivatedRoute, public api: HotelApiService, public booking: BookingServiceService) {}
-  public routerId:any
-  public hotelData:any
+  constructor(public routerInfo: ActivatedRoute, public api: HotelApiService, public booking: BookingServiceService) { }
+  public routerId: any
+  public hotelData: any
 
   getRouterInfo() {
-    this.routerInfo.params.subscribe((data:any) => {
+    this.routerInfo.params.subscribe((data: any) => {
       this.routerId = data
     })
   }
 
-  getById(){
+  getById() {
     this.api.getRoomsById(this.routerId.id).subscribe(data => {
       this.hotelData = data
       this.imagesArray = this.hotelData.images
-      console.log(this.hotelData);
-      
     })
   }
 
-  public selectedImage:any = 0
-  public imagesArray:any
+  public selectedImage: any = 0
+  public imagesArray: any
 
   nextimage() {
     this.selectedImage++
-    if(this.selectedImage > this.imagesArray.length) {
+    if (this.selectedImage > this.imagesArray.length) {
       this.selectedImage = 0
     }
   }
 
   previmage() {
     this.selectedImage--
-    if(this.selectedImage <= 0) {
+    if (this.selectedImage <= 0) {
       this.selectedImage = this.imagesArray.length
     }
   }
 
-  selectImageBydot(id:any) {
+  selectImageBydot(id: any) {
     this.selectedImage = id
   }
 
@@ -68,28 +67,38 @@ export class DetailsComponent implements OnInit{
       userPhone: new FormControl("", Validators.required,),
     })
   }
-  
+
   BookRoom() {
-  this.booking.postBooking(
-    {
-      "id": 0,
-      "roomID": this.routerId,
-      "checkInDate": this.bookingform.controls['checkIn'].value,
-      "checkOutDate": this.bookingform.controls['checkOut'].value,
-      "totalPrice": 0,
-      "isConfirmed": true,
-      "customerName": this.bookingform.controls['userName'].value,
-      "customerId": "string",
-      "customerPhone": this.bookingform.controls['userPhone'].value
-    }
-    ).subscribe(
-      (response) => {
-        console.log('წარმატებული რეგისტრაცია:', response);
-      },
-      (error) => {
-        console.error('რაღაც შეცდომაა:', error);
+
+    this.booking.postBooking(
+      {
+        "id": 0,
+        "roomID": this.routerId.id,
+        "checkInDate": this.bookingform.controls['checkIn'].value,
+        "checkOutDate": this.bookingform.controls['checkOut'].value,
+        "totalPrice": 0,
+        "isConfirmed": true,
+        "customerName": this.bookingform.controls['userName'].value,
+        "customerId": "string",
+        "customerPhone": this.bookingform.controls['userPhone'].value
       }
-    )
+    ).subscribe(
+      response => {
+        Swal.fire({
+          title: "Great!",
+          text: "Successfully booked room!",
+          icon: "success"
+        });
+      },
+      error => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Please enter correct data!",
+          footer: '<a href="#">How to fix this error?</a>'
+        });
+      }
+    );
 
   }
 }

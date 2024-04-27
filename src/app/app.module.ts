@@ -20,6 +20,8 @@ import { RoomsComponent } from './pages/rooms/rooms.component';
 import { DetailsComponent } from './pages/rooms/details/details.component';
 import { BookedsComponent } from './pages/bookeds/bookeds.component';
 import { AnotherDetailsComponent } from './pages/rooms/details/another-details/another-details.component';
+import { AboutComponent } from './pages/home/about/about.component';
+import { EndofhomeComponent } from './pages/home/endofhome/endofhome.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,8 @@ import { AnotherDetailsComponent } from './pages/rooms/details/another-details/a
     DetailsComponent,
     BookedsComponent,
     AnotherDetailsComponent,
+    AboutComponent,
+    EndofhomeComponent,
   ],
   imports: [
     BrowserModule,

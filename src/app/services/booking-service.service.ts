@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -13,6 +13,10 @@ export class BookingServiceService {
   }
 
   postBooking(body:any) {
-    return this.api.post("https://hotelbooking.stepprojects.ge/api/Booking", body)
+    return this.api.post("https://hotelbooking.stepprojects.ge/api/Booking", body, {responseType: "text"})
+  }
+
+  cancelBooking(id:any) {
+    return this.api.delete(`https://hotelbooking.stepprojects.ge/api/Booking/${id}`)
   }
 }

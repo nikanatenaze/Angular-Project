@@ -1,21 +1,21 @@
 <nav class="navigation">
     <div class="nav-title"><img src="../../../assets/logo.png" alt="" routerLink="/"></div>
 
-    <div class="nav-buttons" *ngIf="secondBoolean">
+    <div class="nav-buttons" *ngIf="secloginBoolean">
         <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>
         <a routerLink="/rooms" routerLinkActive="active">Rooms</a>
         <a routerLink="/bookeds" routerLinkActive="active">Booked's</a>
         <a routerLink="/login" routerLinkActive="active">Login</a>
         <a routerLink="/register" routerLinkActive="active">Register</a>
     </div>
-    <div class="nav-buttons-logined" *ngIf="realBoolean">
+    <div class="nav-buttons-logined" *ngIf="loginedBoolean">
         <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>
         <a routerLink="/rooms" routerLinkActive="active">Rooms</a>
         <a routerLink="/bookeds" routerLinkActive="active">Booked's</a>
         <a routerLink="/profile" routerLinkActive="active">Profile</a>
         <div class="Profile-info">
             <div class="name">
-                <p>{{navUserName}}</p>
+                <p>{{userName}}</p>
             </div>
             <button class="sign-out" (click)="signout()"><i class="fa-solid fa-right-from-bracket"></i></button>
         </div>
@@ -27,7 +27,7 @@
 <div class="slide-nav" [style.transform]="toggleSlideBar">
     <button class="slid-button" routerLink="/">Home</button>
     <button class="slid-button" routerLink="/rooms">Rooms</button>
-    <button class="slid-button">Booked's</button>
+    <button class="slid-button" routerLink="/bookeds">Booked's</button>
     <button class="slid-button" routerLink="/login">Login</button>
     <button class="slid-button" routerLink="/register">Register</button>
 </div>

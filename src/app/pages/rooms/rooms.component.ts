@@ -19,7 +19,6 @@ export class RoomsComponent implements OnInit {
   getRooms() {
     this.HotelApi.getRooms().subscribe(data => {
       this.Roomsdata = data
-      console.log(data);
     })
   }
 
@@ -66,9 +65,6 @@ export class RoomsComponent implements OnInit {
     if(this.checkin == undefined) {
       this.checkin = ""
     }
-    
-    console.log(this.checkin);
-    
 
     this.HotelApi.getRooms().subscribe((data:any) => {
       this.Roomsdata = data.filter((res:any) => {
